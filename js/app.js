@@ -32,7 +32,16 @@ function checkAnswers(){
   // once the score has been generated display it
   window.scrollTo(0,0);
   resultSpace.classList.remove("d-none");
-  document.querySelector("body > div.result.py-4.bg-light.text-center > div > p > span").innerText=`${scorePercentage}%`;
-  console.log(percentage);
+  
+  // console.log(percentage);
+
+  let i =0;
+  const timer = setInterval(()=>{
+    if(i===scorePercentage){
+      clearInterval(timer);
+    }
+    document.querySelector("body > div.result.py-4.bg-light.text-center > div > p > span").innerText=`${i}%`;
+    i++;
+  },20)
 }
 
